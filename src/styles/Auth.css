@@ -119,3 +119,85 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+/* Register progress bar css  */
+#Auth .register .progress-bar {
+  width: 100%;
+  padding: 0 30px;
+  margin-top: 40px;
+}
+
+#Auth .register .progress-bar ul {
+  width: 90%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+#Auth .register .progress-bar ul li {
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#Auth .register .progress-bar ul li::before {
+  content: attr(data-title);
+  position: absolute;
+  font-size: 0.85rem;
+  top: -1.5rem;
+  color: #000;
+}
+
+#Auth .register .progress-bar ul::before,
+#Auth .register .progress-bar .progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 2px;
+  background: #555;
+}
+
+#Auth .register .progress-bar ul li.active {
+  background: #e8505b;
+  border-color: #e8505b;
+  color: white;
+  transition-delay: 0.3s;
+}
+
+#Auth .register .progress-bar .progress {
+  background: #e8505b;
+  transition: width 0.3s linear;
+  width: calc(100% / 3 * 0);
+}
+
+#Auth .register .progress-bar ul li.active::before {
+  color: #e8505b;
+  transition-delay: 0.3s;
+}
+
+/* register form css  */
+#Auth .register .wrapper {
+  width: 400%;
+  display: flex;
+  transition: margin-left 0.2s linear;
+}
+
+#Auth .register .wrapper form .input-group select {
+  width: 100%;
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+  padding-left: 10px;
+  outline: none;
+}

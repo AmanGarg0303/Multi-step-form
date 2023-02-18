@@ -3,16 +3,20 @@ import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";
 import "../styles/Auth.css";
 
-const Auth = () => {
+const Auth = ({ isAuth, setIsAuth }) => {
   return (
-    <div id="Auth" className="show">
-      <a href="#!" className="close">
+    <div id="Auth" className={`${isAuth.open ? "show" : ""}`}>
+      <a
+        href="#!"
+        className="close"
+        onClick={() => setIsAuth({ ...isAuth, open: false })}
+      >
         X
       </a>
 
       <div className="content">
-        {/* <LoginForm /> */}
-        <RegisterForm />
+        {isAuth.form === "login" && <LoginForm />}
+        {isAuth.form === "register" && <RegisterForm />}
       </div>
     </div>
   );

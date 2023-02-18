@@ -1,14 +1,9 @@
 import React from "react";
 import "../styles/Home.css";
-import {
-  AiOutlineFacebook,
-  AiFillGoogleCircle,
-  AiFillInstagram,
-} from "react-icons/ai";
 
-const Home = () => {
+const Home = ({ isAuth, setIsAuth }) => {
   return (
-    <div id="Home">
+    <div id="Home" className={`${isAuth.open ? "active" : ""}`}>
       <div className="container">
         <div className="img">
           <img
@@ -20,27 +15,21 @@ const Home = () => {
         <div className="text-btns">
           <p>Hello, login from here</p>
           <div className="btns">
-            <a href="#!" className="login-btn">
+            <a
+              href="#!"
+              className="login-btn"
+              onClick={() => setIsAuth({ open: true, form: "login" })}
+            >
               Login
             </a>
-            <a href="#!" className="login-btn">
+            <a
+              href="#!"
+              className="login-btn"
+              onClick={() => setIsAuth({ open: true, form: "register" })}
+            >
               Register
             </a>
           </div>
-
-          {/* <span>Or via Social Media</span>
-
-          <div className="via-social">
-            <a href="#!">
-              <AiFillGoogleCircle />
-            </a>
-            <a href="#!">
-              <AiOutlineFacebook />
-            </a>
-            <a href="#!">
-              <AiFillInstagram />
-            </a>
-          </div> */}
         </div>
       </div>
     </div>

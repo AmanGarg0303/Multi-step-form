@@ -8,6 +8,11 @@
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  transition: margin-left 0.3s linear;
+}
+
+#Home.active {
+  margin-left: -180px;
 }
 
 #Home .container {

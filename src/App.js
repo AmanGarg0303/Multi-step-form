@@ -1,9 +1,12 @@
 import "./App.css";
+import Auth from "./pages/Auth";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <Home />
+      <Auth />
     </div>
   );
 }
